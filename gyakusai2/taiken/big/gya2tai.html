@@ -3,12 +3,26 @@
 <TITLE>gya2tai</TITLE>
 <SCRIPT language="JavaScript">
 <!--
+<script src='https://samuraiondo.github.io/gyakusai2/ruffle.js'></script>
 function sindou() {
   for (var i=10; i>0 ; i--) {
     self.moveBy(i,i); self.moveBy(-2*i,-2*i); self.moveBy(-i,-i); self.moveBy(2*i,2*i);
     self.moveBy(i,-i); self.moveBy(-2*i,2*i); self.moveBy(-i,i); self.moveBy(2*i,-2*i);		
   }
 }
+var swfobject = {};
+
+swfobject.embedSWF = function(url, cont, width, height){
+    var ruffle = window.RufflePlayer.newest(),
+        player = Object.assign(document.getElementById(cont).appendChild(ruffle.createPlayer()), {
+            width: width,
+            height: height,
+            style: 'width: ' + width + 'px; height: ' + height + 'px',
+        });
+    
+    player.load({ url: url });
+}
+swfobject.embedSWF('https://samuraiondo.github.io/gyakusai2/site.swf', 'ruffle', 360, 240);
 //-->
 </SCRIPT>
 </HEAD>
